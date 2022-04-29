@@ -1,0 +1,57 @@
+.card{
+    max-width: 200px;
+    width: 200px;
+    min-height: 290px;
+    padding: 6px 8px;
+    margin: 10px;
+}
+
+.card__picture{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card__picture img{
+    object-fit: contain;
+    width: 100%;
+    height: 150px;
+}
+
+.card__priceRating{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__price{
+
+}
+
+.card__rating{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 0 !important;
+}
+
+.card__name{
+    cursor: pointer;
+    min-height: 50px;
+    margin-bottom: 10px;
+}
+
+.card__name:hover{
+    color: #3f51b5;
+}
+
+.card__button__wrapper{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card__button{
+    width: 100%;
+}
+

@@ -1,0 +1,48 @@
+
+.spanContainer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.spanContainer__spanTop_middle{
+    vertical-align: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.spanContainer__spanTop_right{
+    font-weight: 700;
+}
+
+.spanContainer__spanTop{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.cardWrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.makeAnOrder{
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+}
+
+.makeAnOrder button{
+    width: inherit;
+    position: fixed;
+    bottom: 2rem;
+    right: 10rem;
+
+}

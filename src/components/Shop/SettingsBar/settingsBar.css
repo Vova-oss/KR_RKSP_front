@@ -1,0 +1,60 @@
+.slider-container{
+
+}
+
+.input-range {
+    margin-bottom: 160px;
+}
+
+
+
+.slider{
+    position: absolute;
+    left: 0;
+}
+
+
+
+.blockBrandsSettings{
+    margin-bottom: 30px;
+    padding: 1rem;
+}
+
+.brandMaxHeight {
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.checkBlockBrand{
+    display: flex;
+    min-width: 100px;
+    justify-content: space-between;
+}
+
+.wrapperInputRangeSlider{
+    margin-bottom: 10px;
+}
+
+.buttonSettings{
+    width: 100%;
+    margin-bottom: 5px !important;
+}
+
+.additionalSettings{
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+
+.choseBrandsHeader{
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.buttonSettingsBlock{
+    margin-top: 30px;
+}

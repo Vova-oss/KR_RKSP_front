@@ -1,0 +1,64 @@
+.buttonClose {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px ;
+}
+
+.cardBasket{
+    width: 170px;
+    max-width: 200px;
+    margin: 20px 10px;
+}
+
+.containerCloseButton{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.imageContainer{
+    padding: 0.5rem;
+    border: gray  1px solid;
+    border-radius: 1rem;
+}
+
+.BasketH6{
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.BasketH6:hover{
+    color: #0080fd;;
+    cursor: pointer;
+}
+
+.counterPanel{
+    min-width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+}
+
+.counterPanel__button{
+    padding: 0.3rem 8px;
+    border: gray 1px solid;
+    border-radius: 0.5rem;
+}
+
+.counterPanel__countTagP{
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.basketCardPrice{
+    color: black;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cardBrandPriceBasket{
+    color: black;
+}

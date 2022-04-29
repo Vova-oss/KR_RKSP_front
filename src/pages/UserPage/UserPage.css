@@ -1,0 +1,39 @@
+
+
+.avatarBlock{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.avatarBlock__img{
+    position: relative;
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    background: no-repeat center;
+    border: 5px solid #007bff;
+    object-fit: cover;
+}
+
+.avatarBlock__modalMenu{
+    position: absolute;
+    padding: 2px 5px;
+    border-radius: 50%;
+    border: 2px solid #007bff;
+    background-color: white;
+    bottom: -10px;
+    right: -10px;
+}
+
+.avatarBlock__nameBlock{
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2px 0;
+}
+
+.avatarBlock__inputLoad{
+    display: none;
+}
