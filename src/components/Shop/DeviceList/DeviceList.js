@@ -4,7 +4,7 @@ import {observer} from "mobx-react-lite";
 import {Context} from "../../../index";
 import DeviceItem from "./DeviceItem";
 import {useHistory, useLocation, useParams} from "react-router-dom";
-import {DotLoader, FadeLoader, MoonLoader, PacmanLoader} from "react-spinners";
+import {DotLoader, FadeLoader, MoonLoader, PacmanLoader, PuffLoader} from "react-spinners";
 import './Device.css'
 import {CardProduct} from "../../Common/CardProduct/CardProduct";
 
@@ -78,8 +78,13 @@ const DeviceList = observer(() => {
                     device.IsLoadDevices
                         ?
                         <div style={{ width: '100%', display: 'flex', alignItems: 'center'}}>
-                            <div style={{height: '70vh', margin: '0 auto', display: 'flex', alignItems: 'center'}}>
-                                <MoonLoader color={'#007bff'}/>
+                            {/*<div style={{height: '70vh', margin: '0 auto', display: 'flex', alignItems: 'center'}}>*/}
+                            {/*    <MoonLoader color={'#007bff'}/>*/}
+                            {/*</div>*/}
+                            <div style={{position: 'absolute', display: 'flex', justifyContent:'center', alignItems:"center",  top: '0', bottom: '0', left:'0', right: '0', width: '100vw', height: '100vh'}}>
+
+                                <PuffLoader speedMultiplier={3} size={200} />
+
                             </div>
                         </div>
 

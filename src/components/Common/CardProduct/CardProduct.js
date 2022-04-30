@@ -7,6 +7,7 @@ import {Image} from "react-bootstrap";
 import star from "../../../assets/svg/star.svg";
 import './CardProduct.css'
 import {Rating} from "@mui/material";
+import {FaShoppingBasket} from "react-icons/fa";
 
 
 export const ButtonBasket = observer(({id = null, price =null , classCust ='', color = 'primary'})=>{
@@ -18,17 +19,44 @@ export const ButtonBasket = observer(({id = null, price =null , classCust ='', c
         basket.toggleBasket(id!==null? Number(id): id, price)
     }
 
-    return  <Button
-        variant="contained"
-        color = {color}
-        className={classCust}
-        onClick={() => {
-            buttonClick(id, price)
-        }}
-    >
-        {basket.isBasketItem(Number(id)) && 'Убрать из корзины'}
-        {basket.isBasketItem(Number(id)) || 'В корзину'}
-    </Button>
+    return <div>
+        {
+            basket.isBasketItem(Number(id)) ?
+                <Button
+                    variant="outlined"
+                    color = {color}
+                    className={classCust}
+                    onClick={() => {
+                        buttonClick(id, price)
+                    }}
+                >
+                    <FaShoppingBasket/>
+                </Button> :
+                <Button
+                    variant="contained"
+                    color = {color}
+                    className={classCust}
+                    onClick={() => {
+                        buttonClick(id, price)
+                    }}
+                >
+                    <FaShoppingBasket/>
+                </Button>
+        }
+    </div>
+
+
+    // return  <Button
+    //     variant="contained"
+    //     color = {color}
+    //     className={classCust}
+    //     onClick={() => {
+    //         buttonClick(id, price)
+    //     }}
+    // >
+    //     {basket.isBasketItem(Number(id)) && 'Убрать из корзины'}
+    //     {basket.isBasketItem(Number(id)) || <FaShoppingBasket/>}
+    // </Button>
 })
 
 export const CardProduct = observer(({device}) => {

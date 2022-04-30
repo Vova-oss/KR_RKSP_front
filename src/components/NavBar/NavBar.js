@@ -89,7 +89,7 @@ const NavBar = observer(() => {
                             </>
                             :
                             <>
-                                <Button className={classes.toolbar__headerButton} onClick={() => (user.isAuthUser?history.push(USER_ROUTE) : history.push(LOGIN_ROUTE))} variant={'outline'}>
+                                <Button className={classes.toolbar__headerButton} disabled={!user.isAuthUser} onClick={() => (user.isAuthUser?history.push(USER_ROUTE) : history.push(LOGIN_ROUTE))} variant={'outline'}>
                                     <NavElemWrapper>
                                         <Typography variant={'button'}>
                                             Профиль
@@ -98,7 +98,8 @@ const NavBar = observer(() => {
                                     <FaUserCircle/>
                                 </Button>
 
-                                <Button className={classes.toolbar__headerButton+' '+classes.toolbar__headerButton_leftMargin} onClick={() => (history.push(BASKET_ROUTE))} variant={'outline'}>
+                                <Button className={classes.toolbar__headerButton+' '+classes.toolbar__headerButton_leftMargin} disabled={!user.isAuthUser}
+                                        onClick={() => (history.push(BASKET_ROUTE))} variant={'outline'}>
                                     <NavElemWrapper>
                                         <Typography variant={'button'}>
                                             Корзина
@@ -124,7 +125,7 @@ const NavBar = observer(() => {
                                              variant={'outline'}>
                                         <NavElemWrapper>
                                             <Typography variant={'button'}>
-                                                Авторицация
+                                                Войти
                                             </Typography>
                                         </NavElemWrapper>
                                         <BiLogIn/>

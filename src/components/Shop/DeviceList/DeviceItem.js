@@ -7,6 +7,7 @@ import {Transition} from "react-transition-group";
 import {Context} from "../../../index";
 import './Device.css'
 import {observer} from "mobx-react-lite";
+import {FaShoppingBasket} from "react-icons/fa";
 
 const DeviceItem = observer(({device}) => {
     const history = useHistory()
@@ -59,7 +60,7 @@ const DeviceItem = observer(({device}) => {
                             variant={!basket.isBasketItem(Number(device.id)) ?'primary': 'danger'}
                         >
                             {basket.isBasketItem(Number(device.id)) && 'Убрать из корзины'}
-                            {basket.isBasketItem(Number(device.id)) || 'В корзину'}
+                            {basket.isBasketItem(Number(device.id)) || (<FaShoppingBasket/>)}
                         </Button>
                     </div>
 

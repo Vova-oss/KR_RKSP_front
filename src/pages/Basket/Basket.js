@@ -85,13 +85,13 @@ const Basket = observer(() => {
             </Container>
             }
 
-            <Row>
-                <Col className={'mt-2 flex-row justify-content-end'} md={12}>
-                    {!user.isAuthUser &&
-                    <Typography variant={'overline'}><i>Чтобы сделать заказ, <Link to={'login'}>войдите</Link> в аккаунт, если нет аккаунта, <Link to={'registration'}>создайте</Link></i></Typography>
-                    }
-                </Col>
-            </Row>
+            {/*<Row>*/}
+            {/*    <Col className={'mt-2 flex-row justify-content-end'} md={12}>*/}
+            {/*        {!user.isAuthUser &&*/}
+            {/*        <Typography variant={'overline'}><i>Чтобы сделать заказ, <Link to={'login'}>войдите</Link> в аккаунт, если нет аккаунта, <Link to={'registration'}>создайте</Link></i></Typography>*/}
+            {/*        }*/}
+            {/*    </Col>*/}
+            {/*</Row>*/}
 
         </Container>
 
