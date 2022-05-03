@@ -49,7 +49,7 @@ const CreateBrand = ({show, onHide}) => {
                 onHide={onHide}
                 centered
             >
-                <Modal.Header closeButton>
+                <Modal.Header>
                     <Modal.Title id="contained-modal-title-vcenter">
                         Добавить новый бренд
                     </Modal.Title>
@@ -79,11 +79,8 @@ const CreateBrand = ({show, onHide}) => {
                                         id="demo-simple-select-helper"
                                         value={typeSelected != null ? typeSelected.id : null}
                                         label="Age"
-                                        // onChange={() => setTypeSelected(type.name)}
                                     >
-                                        <MenuItem value={null}>
-                                            none
-                                        </MenuItem>
+
 
                                         {device.BrandInType.map(type =>
                                             <MenuItem

@@ -42,6 +42,10 @@ const Admin = observer(() => {
     const [deleteBrandVisible, setDeleteBrandVisible] = useState(false)
     const [deleteTypeVisible, setDeleteTypeVisible] = useState(false)
 
+    useEffect(() =>{
+        createDevice.deleteAll()
+    }, [deviceVisible])
+
     useEffect(()=>{
             device.setBrandInType()
         }

@@ -41,7 +41,7 @@ const CreateType = observer(({show, onHide}) => {
                 onHide={onHide}
                 centered
             >
-                <Modal.Header closeButton>
+                <Modal.Header>
                     <Modal.Title id="contained-modal-title-vcenter">
                         Добавить новый тип
                     </Modal.Title>

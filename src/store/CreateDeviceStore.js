@@ -4,9 +4,12 @@ import {giveDeviceServer} from "../http/UserApi";
 //Выполняет функции записиданных перед отправкой на сервер
 export default class CreateDeviceStore {
 
+
     constructor() {
         this._brand = null
+        this._brandId = null
         this._type = null
+        this._typeId = null
         this._name = null
         this._price = null
         this._img = null
@@ -35,6 +38,14 @@ export default class CreateDeviceStore {
 
     setType(type) {
         this._type = type
+    }
+
+    setBrandId(id){
+        this._brandId = id
+    }
+
+    setTypeId(id){
+        this._typeId = id
     }
 
     setName(name) {
@@ -66,6 +77,14 @@ export default class CreateDeviceStore {
         return this._brand
     }
 
+    get getTypeId() {
+        return this._typeId
+    }
+
+    get getBrandId() {
+        return this._brandId
+    }
+
     get Name() {
         return this._name
     }
@@ -83,6 +102,8 @@ export default class CreateDeviceStore {
     }
 
     deleteAll() {
+        this._brandId = null
+        this._typeId = null
         this._brand = null
         this._type = null
         this._name = null

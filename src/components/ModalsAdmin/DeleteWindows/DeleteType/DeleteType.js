@@ -92,9 +92,6 @@ export const DeleteType = observer(({show, onHide}) => {
                                         label="Age"
                                         onChange={selectChange}
                                     >
-                                        <MenuItem value={null}>
-                                            none
-                                        </MenuItem>
 
                                         {store.ListBrands.map(el=>
                                             <MenuItem value={el.id}>
