@@ -110,7 +110,7 @@ export const Footer = observer(() => {
 
             <div className={classes.allRightsReserved}>
                 <Typography variant={'body2'}>
-                    © Купи девайс 2021
+                    © Купи девайс 2022
                 </Typography>
             </div>
 
