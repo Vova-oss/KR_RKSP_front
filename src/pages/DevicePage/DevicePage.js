@@ -35,7 +35,6 @@ const DevicePage = observer(() => {
         const classes = useStyles()
         let history = useHistory()
         const [open, setOpen] = React.useState(false);
-
         const [isDeleteDialogOpen, changeIsDeleteDialogOpen] = React.useState(false)
 
         const {user, taskInstance} = useContext(Context)
@@ -92,8 +91,9 @@ const DevicePage = observer(() => {
             function deleteDevice() {
                 store.deleteCard()
                     .then((type) => {
+                        let currentType =store.device.typeName
                         store.toInitial()
-                        history.push('/home')
+                        history.push('/home/'+currentType)
                     })
                     .catch((resp) => {
                         user.checkStatus(resp.status, resp.info).then(() => {
@@ -134,8 +134,35 @@ const DevicePage = observer(() => {
                                 </Grid>
                             </Grid>
 
-                            <Box sx={{width: '331px', marginTop: '10px'}}>
-                                <ButtonBasket id={item.id} price={item.price} classCust={''}/>
+                            <Box sx={{width: '800px', marginTop: '10px'}}>
+                                {
+                                    user.isAuthAdmin?
+
+                                            <Grid className={classes.root} container spacing={3}>
+                                                <Grid item xs={4}>
+
+                                                    <Button onClick={() => setOpen(true)} size={'large'}
+                                                            variant="outlined" color="primary">
+                                                        Редактировать
+                                                    </Button>
+
+                                                </Grid>
+                                                <Grid item xs={4}>
+
+                                                    <Button onClick={() => changeIsDeleteDialogOpen(true)}
+                                                            variant="outlined" size={'large'} color="primary">Удалить
+                                                        </Button>
+
+                                                </Grid>
+
+                                            </Grid>
+
+                                    :
+                                    <ButtonBasket id={item.id} price={item.price} classCust={''}/>
+
+                                }
+
+
                             </Box>
 
 
@@ -174,37 +201,37 @@ const DevicePage = observer(() => {
                 </Box>
 
 
-                {user._isAuthAdmin && <Box sx={{marginTop: '20px'}}>
-                    <Accordion>
-                        <AccordionSummary
-                            aria-controls="panel1a-content"
-                            id="panel1a-header"
-                        >
-                            <Box sx={{padding: '0 10px 0'}}>
-                                <Typography variant={'h5'}>Для Админа</Typography>
-                            </Box>
-                        </AccordionSummary>
-                        <AccordionDetails>
+                {/*{user._isAuthAdmin && <Box sx={{marginTop: '20px'}}>*/}
+                {/*    <Accordion>*/}
+                {/*        <AccordionSummary*/}
+                {/*            aria-controls="panel1a-content"*/}
+                {/*            id="panel1a-header"*/}
+                {/*        >*/}
+                {/*            <Box sx={{padding: '0 10px 0'}}>*/}
+                {/*                <Typography variant={'h5'}>Для Админа</Typography>*/}
+                {/*            </Box>*/}
+                {/*        </AccordionSummary>*/}
+                {/*        <AccordionDetails>*/}
 
-                            <Grid className={classes.root} container spacing={3}>
-                                <Grid item xs={4}>
+                {/*            <Grid className={classes.root} container spacing={3}>*/}
+                {/*                <Grid item xs={4}>*/}
 
-                                    <Button onClick={() => setOpen(true)} size={'large'} variant="outlined" color="primary">
-                                        Редактировать карточку
-                                    </Button>
+                {/*                    <Button onClick={() => setOpen(true)} size={'large'} variant="outlined" color="primary">*/}
+                {/*                        Редактировать карточку*/}
+                {/*                    </Button>*/}
 
-                                </Grid>
-                                <Grid item xs={4}>
+                {/*                </Grid>*/}
+                {/*                <Grid item xs={4}>*/}
 
-                                    <Button onClick={()=>changeIsDeleteDialogOpen(true)} variant="outlined" size={'large'} color="primary">Удалить
-                                        карточку</Button>
+                {/*                    <Button onClick={()=>changeIsDeleteDialogOpen(true)} variant="outlined" size={'large'} color="primary">Удалить*/}
+                {/*                        карточку</Button>*/}
 
-                                </Grid>
+                {/*                </Grid>*/}
 
-                            </Grid>
-                        </AccordionDetails>
-                    </Accordion>
-                </Box>}
+                {/*            </Grid>*/}
+                {/*        </AccordionDetails>*/}
+                {/*    </Accordion>*/}
+                {/*</Box>}*/}
 
 
                 <ModalDevice info={item} edit open={open} setOpen={setOpen} fishingData={fishingData}

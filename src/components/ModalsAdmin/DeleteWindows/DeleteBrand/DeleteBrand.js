@@ -84,7 +84,7 @@ const DeleteBrand = observer(({show, onHide}) => {
                 >
                     <Modal.Header closeButton>
                         <Modal.Title id="contained-modal-title-vcenter">
-                            {isEdit ?'Редактировать' :'Удалить'} бренд
+                            {isEdit ?'Редактировать' :'Удалить/Редактировать'} бренд
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
@@ -111,7 +111,7 @@ const DeleteBrand = observer(({show, onHide}) => {
                                         )}
 
                                     </Select>
-                                    <FormHelperText>Выберите какого типа удалить бренд</FormHelperText>
+                                    <FormHelperText>Выберите какого типа изменить бренд</FormHelperText>
                                 </FormControl>
                             </div>
 
@@ -147,10 +147,15 @@ const DeleteBrand = observer(({show, onHide}) => {
 
                     </Modal.Body>
                     <Modal.Footer>
-                        {!isEdit && <Button disabled={store.IsDisabled}  color={''} onClick={()=>{ setIsEdit(true)}} variant={'outlined'}>Редактировать</Button>
+                        {!isEdit &&
+                            <div>
+                                <Button disabled={store.IsDisabled}  color={''} onClick={()=>{ setIsEdit(true)}} variant={'outlined'}>
+                                    Редактировать</Button>
+                                <Button disabled={store.IsDisabled || isEdit} color={'error'} onClick={deleteBrandHandler} variant={'outlined'}>
+                                    Удалить</Button>
+                            </div>
+
                         }
-                        <Button disabled={store.IsDisabled || isEdit} color={'error'} onClick={deleteBrandHandler} variant={'outlined'}> Удалить
-                            бренд</Button>
                     </Modal.Footer>
                 </Modal>
             </div>

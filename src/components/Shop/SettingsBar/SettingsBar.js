@@ -179,6 +179,14 @@ const SettingsBar = observer(() => {
                                         min= {Number(device.MinPrice)}
                                         max = {Number(device.MaxPrice)}
                                         disableSwap
+                                        size={"small"}
+                                        sx={{
+                                            width: "100%",
+                                            color: '#3F51B4FF',
+                                            '& .MuiSlider-thumb': {
+                                                borderRadius: '1px',
+                                            },
+                                        }}
                                     />
 
 
