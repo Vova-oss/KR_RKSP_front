@@ -142,48 +142,47 @@ const MainShop = observer(() => {
                                  className="slide_slideImage__29MbQ"/>
                         </div>
                         <div className="slide slide-1">
-                            <img src="https://images.wbstatic.net/bners1/big_school_25_08.jpg" alt=""
+                            <img src="https://images.wbstatic.net/bners1/big_electro_04_05_22.jpg" alt=""
                                  className="slide_slideImage__29MbQ"/>
                         </div>
                         <div className="slide slide-2">
-                            <img src="https://images.wbstatic.net/bners1/pull_666.jpg" alt=""
+                            <img src="https://images.wbstatic.net/bners1/big_holodilnik_4_05_22.jpg" alt=""
                                  className="slide_slideImage__29MbQ"/>
                         </div>
                         <div className="slide slide-4">
-                            <img src="https://images.wbstatic.net/bners1/big_school_25_08.jpg" alt=""
+                            <img src="https://images.wbstatic.net/bners1/big_delivery_0205.jpg" alt=""
                                  className="slide_slideImage__29MbQ"/>
                         </div>
                     </>
                 }/>
             </div>
 
+            {/*<Paper className={classes.secondPage}>*/}
+            {/*    <Typography className={classes.titlePage_2} component={'h1'} variant={'h2'}>Топ категорий</Typography>*/}
+
+
+            {/*    <div className={classes.cardList}>*/}
+            {/*        {mainPageStore.topCategory.map((el, id) =>*/}
+            {/*            <div className={classes.cardList__item}*/}
+            {/*                 onClick={() => {*/}
+            {/*                     history.push(`/home${el === 'неопределено' ? '' : '/' + el}`)*/}
+            {/*                 }}*/}
+            {/*                 key={id}>*/}
+            {/*                <div>*/}
+            {/*                    {el}*/}
+            {/*                </div>*/}
+            {/*            </div>*/}
+            {/*        )}*/}
+            {/*    </div>*/}
+
+
+            {/*</Paper>*/}
+
+
             <Paper className={classes.secondPage}>
-                <Typography className={classes.titlePage_2} component={'h1'} variant={'h2'}>Топ категорий</Typography>
-
-
-                <div className={classes.cardList}>
-                    {mainPageStore.topCategory.map((el, id) =>
-                        <div className={classes.cardList__item}
-                             /*style={{backgroundImage: `url(${imgMassive[id]})`, objectFit: 'cover', objectPosition: '0% 0%', }}*/
-                             onClick={() => {
-                                 history.push(`/home${el === 'неопределено' ? '' : '/' + el}`)
-                             }}
-                             key={id}>
-                            <div>
-                                {el}
-                            </div>
-                        </div>
-                    )}
-                </div>
-
-
-            </Paper>
-
-
-            <Paper className={classes.secondPage}>
-                <Typography className={classes.titlePage_2} component={'h2'} variant={'h2'}>Новинки</Typography>
+                <Typography className={classes.titlePage_2} component={'h2'} variant={'h2'}>Возможно, вам понравится</Typography>
                 <div className={classes.sliderContainer}>
-                    <Slider devices={mainPageStore.giveDevices.length} id={'mainpage_2'} render={() =>
+                    {/*<Slider devices={mainPageStore.giveDevices.length} id={'mainpage_2'} render={() =>*/}
                         <>
                             {mainPageStore.giveDevices.map((el, index)=><div className="slide">
                                 <div className={classes.classList}>
@@ -191,7 +190,7 @@ const MainShop = observer(() => {
                                 </div>
                             </div> )}
                         </>
-                    }/>
+                    {/*}/>*/}
                 </div>
 
 

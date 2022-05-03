@@ -8,12 +8,13 @@ export const MainShopStyles = makeStyles((theme) => ({
             },
         },
         sliderContainer: {
-            height: '70vh',
+            height: '100%',
             marginBottom: '20px',
+            marginTop: '50px',
         },
         classList:{
             display: 'flex',
-            justifyContent: 'space-between',
+            // justifyContent: 'space-between',
             margin: '0 auto',
         },
 

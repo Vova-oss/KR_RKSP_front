@@ -59,7 +59,7 @@ export const useStylesPopupCategory = makeStyles((theme) => ({
         },
 
         itemBrands: {
-            width: '95%',
+            width: '100%',
             margin: '30px auto 0px',
             display: 'flex',
             justifyContent: 'flex-start',
@@ -176,10 +176,9 @@ const UnderHeaderMenu = observer(({handleLock}) => {
 
                         {menu.BrandInType.map((el,i)=>
                                     <Link onClick={()=>{handleLock(true)}} key={el.name} to={'/home/' + el.name} className={classes.checkboxWrap}>
-                                        <Typography variant={'h6'}>
+                                        <Typography  variant={'h6'}>
                                             {el.name}
                                         </Typography>
-                                        <Divider />
                                     </Link>
 
 
