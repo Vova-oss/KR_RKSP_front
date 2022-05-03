@@ -16,6 +16,7 @@ import date from 'date-and-time';
 import {Context} from "../../../index";
 import {orderStore} from "../../../store/OrderStore";
 import {styled} from "@material-ui/core/styles";
+import {useHistory} from "react-router-dom";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -96,6 +97,7 @@ const CakeTable = ({isUserTable = false, row}) => {
 
     console.log('totalSum: ', row)
 
+    const history = useHistory()
     const {taskInstance, user} = useContext(Context)
 
 
@@ -124,6 +126,7 @@ const CakeTable = ({isUserTable = false, row}) => {
 
     };
 
+
     return (
         <>
             <TableRow>
@@ -135,7 +138,7 @@ const CakeTable = ({isUserTable = false, row}) => {
                 <TableCell component="th" scope="row">
                     {row.id}
                 </TableCell>
-                <TableCell align="left">{row?.order_devicesDTO?.length}</TableCell>
+                <TableCell align="left">{row?.order_deviceResponseModels?.length}</TableCell>
                 <TableCell align="right">{row?.totalSumCheck?.toLocaleString()} ₽</TableCell>
                 <TableCell align="right">{date.format(new Date(row.dataOfCreate), 'YYYY/MM/DD HH:mm:ss')}</TableCell>
                 {isUserTable || <TableCell align="right">
@@ -176,14 +179,15 @@ const CakeTable = ({isUserTable = false, row}) => {
                                     <InsertedTableCellHead align="right">Цена за единицу (₽)</InsertedTableCellHead>
                                     <InsertedTableCellHead align="right">Кол. товара</InsertedTableCellHead>
                                     <InsertedTableCellHead align="right">Итого (₽)</InsertedTableCellHead>
-                                    <InsertedTableCellHead align="right">Открыть карточку товара</InsertedTableCellHead>
                                 </TableRow>
                             </TableHead>
                             <TableBody >
                                 {row.order_deviceResponseModels.map((product) => (
                                     <TableRow className={classes.hoverRowInsertedTable} key={product.deviceResponseModel.id}>
                                         <InsertedTableCellBody component="th" scope="row">
-                                            {product.deviceResponseModel.name}
+                                            <>
+                                                {product.deviceResponseModel.name}
+                                            </>
                                         </InsertedTableCellBody>
                                         <InsertedTableCellBody align="left">{product.deviceResponseModel.typeName}</InsertedTableCellBody>
                                         <InsertedTableCellBody align="right">{product.deviceResponseModel.price.toLocaleString()} ₽</InsertedTableCellBody>
@@ -191,11 +195,7 @@ const CakeTable = ({isUserTable = false, row}) => {
                                         <InsertedTableCellBody className={classes.insertedTableTypography2} align="right">
                                             {(Number(product.deviceResponseModel.price) * product.amountOfProduct).toLocaleString()} ₽
                                         </InsertedTableCellBody>
-                                        <InsertedTableCellBody align="right">
-                                            <Button className={classes.insertedTableTypography1}>
-                                                Открыть
-                                            </Button>
-                                        </InsertedTableCellBody>
+
                                     </TableRow>
                                 ))}
                             </TableBody>

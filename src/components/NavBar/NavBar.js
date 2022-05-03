@@ -75,7 +75,7 @@ const NavBar = observer(() => {
                             <>
                                     <Button variant={'outline'} className={classes.toolbar__headerButton} onClick={() => (history.push(ADMIN_ROUTE))} >
                                         <NavElemWrapper>
-                                            <p>Админ панель</p>
+                                            <p>Админка</p>
                                         </NavElemWrapper>
                                     </Button>
 
